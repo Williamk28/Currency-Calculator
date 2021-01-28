@@ -6,6 +6,7 @@ let model, view;
 const initialise = evt => {
     model = new Model();
     view = new View();
+    view.getStorage();
     //do any initialisation and "plumbing" here
 
     view.buttonClick((event)=>{
@@ -18,6 +19,7 @@ const initialise = evt => {
             model.appendNumber(event.target.id);
         }
         view.visitOutput(model.visitDisplay,model.homeDisplay);
+        view.setStorage();
     });
 };
 

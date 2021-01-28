@@ -20,11 +20,28 @@ class View{
 
     }
 
-    visitOutput(visit,home){
-        document.getElementById("visiting").value = visit;
+    visitOutput(away,home){
+        document.getElementById("away").value = away;
         document.getElementById("home").value = home;
     }
 
+    setStorage(){
+        localStorage.setItem("homeCurrency", document.getElementById("homeCurrency").value);
+        localStorage.setItem("awayCurrency", document.getElementById("awayCurrency").value);
+    }
+
+    getStorage(){
+        if (localStorage.getItem("awayCurrency") === null){
+            document.getElementById("awayCurrency").value = "EUR";
+        } else {
+            document.getElementById("awayCurrency").value = localStorage.getItem("awayCurrency");
+        }
+        if (localStorage.getItem("homeCurrency") === null){
+            document.getElementById("homeCurrency").value = "GBP";
+        } else {
+            document.getElementById("homeCurrency").value = localStorage.getItem("homeCurrency");
+        }
+    }
 
     conversion(){
         let currency = 0;
