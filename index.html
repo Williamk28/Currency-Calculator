@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Currency Calculator</title>
+    <link rel = "stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <h1>Currency Calculator</h1>
+</header>
+<main>
+    <div class = "input">
+        <label for = "visiting"> Visiting: </label>
+        <input type = "text" id = "visiting" name = "visiting" disabled />
+        <label for = "awayCurrency"></label>
+        <select name = "awayCurrency" id = "awayCurrency">
+            <option selected = "selected" value = "EUR"> EUR </option>
+            <option value = "GBP"> GBP </option>
+            <option value = "PLN"> PLN </option>
+        </select>
+    </div>
+    <div class = "output">
+        <label for = "home"> Card Est: </label>
+        <input type = "text" id = "home" name = "home" disabled />
+        <label for = "homeCurrency"></label>
+        <select name = "homeCurrency" id = "homeCurrency">
+            <option selected = "selected" value = "GBP"> GBP </option>
+            <option value = "EUR"> EUR </option>
+            <option value = "PLN"> PLN </option>
+        </select>
+    </div>
+
+    <div class = "buttons">
+        <button id = "7"> 7 </button>
+        <button id = "8"> 8 </button>
+        <button id = "9"> 9 </button>
+        <button id = "4"> 4 </button>
+        <button id = "5"> 5 </button>
+        <button id = "6"> 6 </button>
+        <button id = "1"> 1 </button>
+        <button id = "2"> 2 </button>
+        <button id = "3"> 3 </button>
+        <button id = "clear"> C </button>
+        <button id = "0"> 0 </button>
+        <button id = "equals"> = </button>
+    </div>
+</main>
+<script src = "model.js"></script>
+<script src = "view.js"></script>
+<script src = "controller.js"></script>
+
+</body>
+</html>
