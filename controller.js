@@ -13,7 +13,9 @@ const initialise = evt => {
         if (event.target.id === "clear"){
             model.clear();
         } else if (event.target.id === "equals"){
-            model.convert(model.visitDisplay, view.conversion());
+            let away = view.getCurrency(view.getAwayCurrency());
+            let home = view.getCurrency(view.getHomeCurrency());
+            model.convert(model.visitDisplay, away, home, view.bankFee());
         }
         else {
             model.appendNumber(event.target.id);

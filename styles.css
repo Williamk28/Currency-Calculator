@@ -15,7 +15,7 @@ header {
     font-size: 1.5rem;
 }
 
-#homeCurrency, #awayCurrency{
+#homeCurrency,#awayCurrency,#bankFee{
     font-size: 1rem;
 }
 

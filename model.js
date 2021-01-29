@@ -15,12 +15,12 @@ class Model {
         this.homeDisplay = "";
     }
 
-    convert(value, conversion){
+    convert(value, away, home, fee){
         let result;
-        if (conversion === 0){
-            result = value;
+        if (away === home){
+            result = (value * fee);
         } else {
-            result = Math.round(value * conversion);
+            result = Math.round(((value / away) * home) * fee);
         }
         this.homeDisplay = result;
     }
