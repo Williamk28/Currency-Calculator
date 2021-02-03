@@ -46,9 +46,10 @@ class Model {
             }
             currency.push("EUR");
             rates.push("1");
+            localStorage.setItem("Currency", JSON.stringify(currency));
+            localStorage.setItem("Rates", JSON.stringify(rates));
+            localStorage.setItem("Date", ECBRates.getAttribute("time"));
         });
-        console.log(currency);
-        console.log(rates);
         request.open("GET", "https://devweb2020.cis.strath.ac.uk/~aes02112/ecbxml.php", true);
         request.send();
     }
@@ -73,5 +74,32 @@ class Model {
             }
         }
         return homeRate;
+    }
+
+    getStorage(){
+        currency = JSON.parse(localStorage.getItem("Currency"));
+        rates = JSON.parse(localStorage.getItem("Rates"));
+    }
+
+    getLiveDate(){
+        let today = new Date();
+        let year = today.getFullYear();
+        let month = today.getMonth()+1;
+        let date = today.getDate();
+
+        if (date < 10){
+            date = "0" + date;
+        }
+
+        if (month < 10){
+            month = "0" + month;
+        }
+        return year + "-" + month + "-" + date;
+    }
+
+    getStorageDate(){
+        let date;
+        date = localStorage.getItem("Date");
+        return date;
     }
 }
