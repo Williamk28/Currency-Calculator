@@ -31,7 +31,7 @@ const initialise = evt => {
             let away = model.getAwayRates(view.getAwayCurrency());
             let home = model.getHomeRates(view.getHomeCurrency());
             let value = model.visitDisplay;
-            let fee = view.bankFee();
+            let fee = model.bankFee(view.getBankFee());
             model.convert(value, away, home, fee);
         }
         else {

@@ -43,7 +43,7 @@ class View{
         }
     }
 
-    bankFee(){
+    getBankFee(){
         let fee;
         if (document.getElementById("bankFee").value === "0"){
             fee = 1;

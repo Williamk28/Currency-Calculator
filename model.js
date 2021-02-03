@@ -28,6 +28,18 @@ class Model {
         this.homeDisplay = result;
     }
 
+    bankFee(fee){
+        if (fee === 1){
+            return 1;
+        } else if (fee === 2){
+            return 1.02;
+        } else if (fee === 4){
+            return 1.04;
+        } else {
+            return 1.06;
+        }
+    }
+
     getLiveRates(){
         let i;
         let xmlText = "";
