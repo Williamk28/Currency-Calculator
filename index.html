@@ -2,17 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
     <title>Currency Calculator</title>
     <link rel = "stylesheet" href="styles.css">
+    <link rel = "stylesheet" href="normalize.css">
 </head>
 <body>
-<header>
-    <h1>Currency Calculator</h1>
-</header>
 <main>
-    <div class = "input">
-        <label for = "away"> Visiting: </label>
-        <input type = "text" id = "away" name = "away" disabled />
+    <div class = "output">
+        <textarea id = "display" name = "display" disabled></textarea>
+    </div>
+    <div class = currency-visit>
         <label for = "awayCurrency"></label>
         <select name = "awayCurrency" id = "awayCurrency">
             <option value = "EUR"> EUR </option>
@@ -50,9 +52,7 @@
             <option value = "ZAR"> ZAR </option>
         </select>
     </div>
-    <div class = "output">
-        <label for = "home"> Card Est: </label>
-        <input type = "text" id = "home" name = "home" disabled />
+    <div class = "currency-home">
         <label for = "homeCurrency"></label>
         <select name = "homeCurrency" id = "homeCurrency">
             <option value = "EUR"> EUR </option>
@@ -90,9 +90,15 @@
             <option value = "ZAR"> ZAR </option>
         </select>
     </div>
-
-    <br>
-
+    <div class = "bankFee">
+        <label for = "fee"> Bank Fee: </label>
+        <select name = "fee" id = "fee">
+            <option selected = "selected" value = "0"> 0% </option>
+            <option value = "2"> 2% </option>
+            <option value = "4"> 4% </option>
+            <option value = "6"> 6% </option>
+        </select>
+    </div>
     <div class = "button-grid">
         <button id = "7"> 7 </button>
         <button id = "8"> 8 </button>
@@ -107,21 +113,9 @@
         <button id = "0"> 0 </button>
         <button id = "equals"> = </button>
     </div>
-
-    <div class = "bankFee">
-        <label for = "bankFee"> Bank Fee: </label>
-        <select name = "bankFee" id = "bankFee">
-            <option selected = "selected" value = "0"> 0% </option>
-            <option value = "2"> 2% </option>
-            <option value = "4"> 4% </option>
-            <option value = "6"> 6% </option>
-        </select>
-    </div>
-
 </main>
 <script src = "model.js"></script>
 <script src = "view.js"></script>
 <script src = "controller.js"></script>
-
 </body>
 </html>

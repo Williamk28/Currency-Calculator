@@ -30,16 +30,16 @@ const initialise = evt => {
         } else if (event.target.id === "equals"){
             let away = model.getAwayRates(view.getAwayCurrency());
             let home = model.getHomeRates(view.getHomeCurrency());
-            let value = model.visitDisplay;
+            let value = model.display;
             let fee = model.bankFee(view.getBankFee());
             model.convert(value, away, home, fee);
         }
         else {
             model.appendNumber(event.target.id);
         }
-        view.visitOutput(model.visitDisplay,model.homeDisplay);
-        view.setStorage();
+        view.visitOutput(model.display);
     });
+    view.setStorage();
 };
 
 

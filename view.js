@@ -20,9 +20,8 @@ class View{
 
     }
 
-    visitOutput(away,home){
-        document.getElementById("away").value = away;
-        document.getElementById("home").value = home;
+    visitOutput(away){
+        document.getElementById("display").value = away;
     }
 
     setStorage(){
@@ -43,19 +42,8 @@ class View{
         }
     }
 
-    getBankFee(){
-        let fee;
-        if (document.getElementById("bankFee").value === "0"){
-            fee = 1;
-        } else if (document.getElementById("bankFee").value === "2"){
-            fee = 1.02;
-        } else if (document.getElementById("bankFee").value === "4") {
-            fee = 1.04;
-        }
-        else {
-            fee = 1.06;
-        }
-        return fee;
+    getBankFee() {
+        return document.getElementById("fee").value;
     }
 
     getAwayCurrency(){

@@ -5,17 +5,15 @@ let rates = [];
 
 class Model {
     constructor(){
-        this.visitDisplay = "";
-        this.homeDisplay = "";
+        this.display = "";
     }
 
     appendNumber(number){
-        this.visitDisplay += number;
+        this.display += number;
     }
 
     clear(){
-        this.visitDisplay = "";
-        this.homeDisplay = "";
+        this.display = "";
     }
 
     convert(value, away, home, fee){
@@ -25,15 +23,15 @@ class Model {
         } else {
             result = Math.round(((value / away) * home) * fee);
         }
-        this.homeDisplay = result;
+        this.display = result;
     }
 
     bankFee(fee){
-        if (fee === 1){
+        if (fee === "0"){
             return 1;
-        } else if (fee === 2){
+        } else if (fee === "2"){
             return 1.02;
-        } else if (fee === 4){
+        } else if (fee === "4"){
             return 1.04;
         } else {
             return 1.06;
