@@ -1,12 +1,14 @@
 html, body{
     text-align: center;
     margin: 0;
+    background-color: #cddbe7;
+    font-family: sans-serif;
 }
 
 .button-grid{
     display: grid;
-    position: relative;
-    min-height: 70vh;
+    height: 70vh;
+    width: 100vw;
     font-size: 2rem;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, 1fr);
@@ -23,14 +25,63 @@ html, body{
 #display {
     background-color: #cddbe7;
     color: black;
-    grid-template-columns: repeat(3, 1fr);
     text-align: right;
-    min-height: 20vh;
-    min-width: 100vw;
+    height: 29.4vh;
+    width: 100vw;
     font-size: 2rem;
     padding: 1.5rem;
     resize: none;
     outline: none;
     border: none;
     box-sizing: border-box;
+}
+
+#sideNav {
+    position:absolute;
+    top:0;
+    left:-12rem;
+    width:12rem;
+    height:100%;
+    background-color: #b2c8da;
+    transition: 300ms;
+}
+#sideNav.active {
+    left:0;
+}
+#sideNav .openCloseBtn {
+    position:absolute;
+    left:12.5rem;
+    top:1rem;
+}
+
+#sideNav .currency-visit, .currency-home, .bankFee{
+    padding: 1rem;
+    font-size: 1.25rem;
+}
+
+.currencyVisitScroll, .currencyHomeScroll{
+    background-color: white;
+    overflow: scroll;
+    height: 11rem;
+    width: 10rem;
+}
+
+.line1, .line2, .line3 {
+    width: 2rem;
+    height: 0.4rem;
+    background-color: black;
+    margin: 0.3rem 0;
+    transition: 400ms;
+}
+
+.change .line1 {
+    transform: rotate(-45deg) translate(-0.7rem, 0.6rem);
+}
+
+.change .line2 {
+    opacity: 0;
+}
+
+.change .line3 {
+    transform: rotate(45deg) translate(-0.4rem, -0.3rem);
 }

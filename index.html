@@ -8,96 +8,371 @@
     <title>Currency Calculator</title>
     <link rel = "stylesheet" href="styles.css">
     <link rel = "stylesheet" href="normalize.css">
+    <link rel="apple-touch-icon" sizes="128x128" href="images/Logo128.png">
+    <link rel="icon" sizes="192x192" href="images/Logo192.png">
 </head>
 <body>
 <main>
+    <div class = "sideNav" id = "sideNav">
+        <div class="openCloseBtn" id = "openCloseBtn">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+        <h2> Currency Calculator </h2>
+        <div class = "currency-visit">
+            <label id = "awayCurrency"> Visiting </label>
+            <div class = "currencyVisitScroll">
+                <label>
+                    <input type = "radio"  name = "awayCurrency" value = "AUD"> AUD
+                    <img src = "images/Australia.png" alt = "Australia">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "awayCurrency" value = "BGN"> BGN
+                    <img src = "images/Bulgaria.png" alt = "Bulgaria">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "awayCurrency" value = "BRL"> BRL
+                    <img src = "images/Brazil.png" alt = "Brazil">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "awayCurrency" value = "CAD"> CAD
+                    <img src = "images/Canada.png" alt = "Canada">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "awayCurrency" value = "CHF"> CHF
+                    <img src = "images/Switzerland.png" alt = "Switzerland">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "awayCurrency" value = "CNY"> CNY
+                    <img src = "images/China.png" alt = "China">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "awayCurrency" value = "CZK"> CZK
+                    <img src = "images/CzechRepublic.png" alt = "Czech Republic">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "awayCurrency" value = "DKK"> DKK
+                    <img src = "images/Denmark.png" alt = "Denmark">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "awayCurrency" value = "EUR" checked = "checked"> EUR
+                    <img src = "images/Europe.png" alt = "Europe">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "awayCurrency" value = "GBP"> GBP
+                    <img src = "images/UK.png" alt = "United Kingdom">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "awayCurrency" value = "HKD"> HKD
+                    <img src = "images/HongKong.png" alt = "Hong Kong">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "awayCurrency" value = "HRK"> HRK
+                    <img src = "images/Croatia.png" alt = "Croatia">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "awayCurrency" value = "HUF"> HUF
+                    <img src = "images/Hungary.png" alt = "Hungary">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "awayCurrency" value = "IDR"> IDR
+                    <img src = "images/Indonesia.png" alt = "Indonesia">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "awayCurrency" value = "ILS"> ILS
+                    <img src = "images/Latvia.png" alt = "Latvia">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "awayCurrency" value = "INR"> INR
+                    <img src = "images/India.png" alt = "India">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "awayCurrency" value = "ISK"> ISK
+                    <img src = "images/Iceland.png" alt = "Iceland">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "awayCurrency" value = "JPY"> JPY
+                    <img src = "images/Japan.png" alt = "Japan">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "awayCurrency" value = "KRW"> KRW
+                    <img src = "images/SouthKorea.png" alt = "South Korea">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "awayCurrency" value = "MXN"> MXN
+                    <img src = "images/Mexico.png" alt = "Mexico">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "awayCurrency" value = "MYR"> MYR
+                    <img src = "images/Malaysia.png" alt = "Malaysia">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "awayCurrency" value = "NOK"> NOK
+                    <img src = "images/Norway.png" alt = "Norway">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "awayCurrency" value = "NZD"> NZD
+                    <img src = "images/NewZealand.png" alt = "New Zealand">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "awayCurrency" value = "PHP"> PHP
+                    <img src = "images/Philippines.png" alt = "Philippines">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "awayCurrency" value = "PLN"> PLN
+                    <img src = "images/Poland.png" alt = "Poland">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "awayCurrency" value = "RON"> RON
+                    <img src = "images/Romania.png" alt = "Romania">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "awayCurrency" value = "RUB"> RUB
+                    <img src = "images/Russia.png" alt = "Russia">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "awayCurrency" value = "SEK"> SEK
+                    <img src = "images/Sweden.png" alt = "Sweden">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "awayCurrency" value = "SGD"> SGD
+                    <img src = "images/Singapore.png" alt = "Singapore">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "awayCurrency" value = "THB"> THB
+                    <img src = "images/Thailand.png" alt = "Thailand">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "awayCurrency" value = "TRY"> TRY
+                    <img src = "images/Turkey.png" alt = "Turkey">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "awayCurrency" value = "USD"> USD
+                    <img src = "images/USA.png" alt = "United States of America">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "awayCurrency" value = "ZAR"> ZAR
+                    <img src = "images/SouthAfrica.png" alt = "South Africa">
+                </label>
+                <br>
+            </div>
+        </div>
+        <div class = "currency-home">
+            <label id = "homeCurrency"> Home </label>
+            <div class = "currencyHomeScroll">
+                <label>
+                    <input type = "radio"  name = "homeCurrency" value = "AUD"> AUD
+                    <img src = "images/Australia.png" alt = "Australia">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "homeCurrency" value = "BGN"> BGN
+                    <img src = "images/Bulgaria.png" alt = "Bulgaria">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "homeCurrency" value = "BRL"> BRL
+                    <img src = "images/Brazil.png" alt = "Brazil">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "homeCurrency" value = "CAD"> CAD
+                    <img src = "images/Canada.png" alt = "Canada">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "homeCurrency" value = "CHF"> CHF
+                    <img src = "images/Switzerland.png" alt = "Switzerland">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "homeCurrency" value = "CNY"> CNY
+                    <img src = "images/China.png" alt = "China">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "homeCurrency" value = "CZK"> CZK
+                    <img src = "images/CzechRepublic.png" alt = "Czech Republic">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "homeCurrency" value = "DKK"> DKK
+                    <img src = "images/Denmark.png" alt = "Denmark">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "homeCurrency" value = "EURs"> EUR
+                    <img src = "images/Europe.png" alt = "Europe">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "homeCurrency" value = "GBP" checked = "checked"> GBP
+                    <img src = "images/UK.png" alt = "United Kingdom">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "homeCurrency" value = "HKD"> HKD
+                    <img src = "images/HongKong.png" alt = "Hong Kong">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "homeCurrency" value = "HRK"> HRK
+                    <img src = "images/Croatia.png" alt = "Croatia">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "homeCurrency" value = "HUF"> HUF
+                    <img src = "images/Hungary.png" alt = "Hungary">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "homeCurrency" value = "IDR"> IDR
+                    <img src = "images/Indonesia.png" alt = "Indonesia">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "homeCurrency" value = "ILS"> ILS
+                    <img src = "images/Latvia.png" alt = "Latvia">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "homeCurrency" value = "INR"> INR
+                    <img src = "images/India.png" alt = "India">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "homeCurrency" value = "ISK"> ISK
+                    <img src = "images/Iceland.png" alt = "Iceland">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "homeCurrency" value = "JPY"> JPY
+                    <img src = "images/Japan.png" alt = "Japan">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "homeCurrency" value = "KRW"> KRW
+                    <img src = "images/SouthKorea.png" alt = "South Korea">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "homeCurrency" value = "MXN"> MXN
+                    <img src = "images/Mexico.png" alt = "Mexico">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "homeCurrency" value = "MYR"> MYR
+                    <img src = "images/Malaysia.png" alt = "Malaysia">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "homeCurrency" value = "NOK"> NOK
+                    <img src = "images/Norway.png" alt = "Norway">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "homeCurrency" value = "NZD"> NZD
+                    <img src = "images/NewZealand.png" alt = "New Zealand">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "homeCurrency" value = "PHP"> PHP
+                    <img src = "images/Philippines.png" alt = "Philippines">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "homeCurrency" value = "PLN"> PLN
+                    <img src = "images/Poland.png" alt = "Poland">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "homeCurrency" value = "RON"> RON
+                    <img src = "images/Romania.png" alt = "Romania">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "homeCurrency" value = "RUB"> RUB
+                    <img src = "images/Russia.png" alt = "Russia">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "homeCurrency" value = "SEK"> SEK
+                    <img src = "images/Sweden.png" alt = "Sweden">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "homeCurrency" value = "SGD"> SGD
+                    <img src = "images/Singapore.png" alt = "Singapore">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "homeCurrency" value = "THB"> THB
+                    <img src = "images/Thailand.png" alt = "Thailand">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "homeCurrency" value = "TRY"> TRY
+                    <img src = "images/Turkey.png" alt = "Turkey">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "homeCurrency" value = "USD"> USD
+                    <img src = "images/USA.png" alt = "United States of America">
+                </label>
+                <br>
+                <label>
+                    <input type = "radio"  name = "homeCurrency" value = "ZAR"> ZAR
+                    <img src = "images/SouthAfrica.png" alt = "South Africa">
+                </label>
+                <br>
+            </div>
+        </div>
+        <div class = "bankFee">
+            <label for = "fee"> Bank Fee </label>
+            <select name = "fee" id = "fee">
+                <option selected = "selected" value = "0"> 0% </option>
+                <option value = "2"> 2% </option>
+                <option value = "4"> 4% </option>
+                <option value = "6"> 6% </option>
+            </select>
+        </div>
+    </div>
+
     <div class = "output">
         <textarea id = "display" name = "display" disabled></textarea>
-    </div>
-    <div class = currency-visit>
-        <label for = "awayCurrency"></label>
-        <select name = "awayCurrency" id = "awayCurrency">
-            <option value = "EUR"> EUR </option>
-            <option value = "GBP"> GBP </option>
-            <option value = "PLN"> PLN </option>
-            <option value = "USD"> USD </option>
-            <option value = "JPY"> JPY </option>
-            <option value = "BGN"> BGN </option>
-            <option value = "CZK"> CZK </option>
-            <option value = "DKK"> DKK </option>
-            <option value = "HUF"> HUF </option>
-            <option value = "RON"> RON </option>
-            <option value = "SEK"> SEK </option>
-            <option value = "CHF"> CHF </option>
-            <option value = "ISK"> ISK </option>
-            <option value = "NOK"> NOK </option>
-            <option value = "HRK"> HRK </option>
-            <option value = "RUB"> RUB </option>
-            <option value = "TRY"> TRY </option>
-            <option value = "AUD"> AUD </option>
-            <option value = "BRL"> BRL </option>
-            <option value = "CAD"> CAD </option>
-            <option value = "CNY"> CNY </option>
-            <option value = "HKD"> HKD </option>
-            <option value = "IDR"> IDR </option>
-            <option value = "ILS"> ILS </option>
-            <option value = "INR"> INR </option>
-            <option value = "KRW"> KRW </option>
-            <option value = "MXN"> MXN </option>
-            <option value = "MYR"> MYR </option>
-            <option value = "NZD"> NZD </option>
-            <option value = "PHP"> PHP </option>
-            <option value = "SGD"> SGD </option>
-            <option value = "THB"> THB </option>
-            <option value = "ZAR"> ZAR </option>
-        </select>
-    </div>
-    <div class = "currency-home">
-        <label for = "homeCurrency"></label>
-        <select name = "homeCurrency" id = "homeCurrency">
-            <option value = "EUR"> EUR </option>
-            <option value = "GBP"> GBP </option>
-            <option value = "PLN"> PLN </option>
-            <option value = "USD"> USD </option>
-            <option value = "JPY"> JPY </option>
-            <option value = "BGN"> BGN </option>
-            <option value = "CZK"> CZK </option>
-            <option value = "DKK"> DKK </option>
-            <option value = "HUF"> HUF </option>
-            <option value = "RON"> RON </option>
-            <option value = "SEK"> SEK </option>
-            <option value = "CHF"> CHF </option>
-            <option value = "ISK"> ISK </option>
-            <option value = "NOK"> NOK </option>
-            <option value = "HRK"> HRK </option>
-            <option value = "RUB"> RUB </option>
-            <option value = "TRY"> TRY </option>
-            <option value = "AUD"> AUD </option>
-            <option value = "BRL"> BRL </option>
-            <option value = "CAD"> CAD </option>
-            <option value = "CNY"> CNY </option>
-            <option value = "HKD"> HKD </option>
-            <option value = "IDR"> IDR </option>
-            <option value = "ILS"> ILS </option>
-            <option value = "INR"> INR </option>
-            <option value = "KRW"> KRW </option>
-            <option value = "MXN"> MXN </option>
-            <option value = "MYR"> MYR </option>
-            <option value = "NZD"> NZD </option>
-            <option value = "PHP"> PHP </option>
-            <option value = "SGD"> SGD </option>
-            <option value = "THB"> THB </option>
-            <option value = "ZAR"> ZAR </option>
-        </select>
-    </div>
-    <div class = "bankFee">
-        <label for = "fee"> Bank Fee: </label>
-        <select name = "fee" id = "fee">
-            <option selected = "selected" value = "0"> 0% </option>
-            <option value = "2"> 2% </option>
-            <option value = "4"> 4% </option>
-            <option value = "6"> 6% </option>
-        </select>
     </div>
     <div class = "button-grid">
         <button id = "7"> 7 </button>

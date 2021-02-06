@@ -3,9 +3,10 @@
 
 let model, view;
 
-const initialise = evt => {
+const initialise = () => {
     model = new Model();
     view = new View();
+    //do any initialisation and "plumbing" here
 
     if(navigator.onLine === true){
         console.log("ONLINE");
@@ -22,7 +23,7 @@ const initialise = evt => {
     }
 
     view.getStorage();
-    //do any initialisation and "plumbing" here
+    view.getBankStorage();
 
     view.buttonClick((event)=>{
         if (event.target.id === "clear"){
@@ -37,9 +38,22 @@ const initialise = evt => {
         else {
             model.appendNumber(event.target.id);
         }
-        view.visitOutput(model.display);
+        view.display(model.display);
     });
-    view.setStorage();
+
+    view.radioClick(()=>{
+        view.getAwayCurrency();
+        view.getHomeCurrency();
+        view.setStorage();
+    });
+
+    view.sideNavClick(()=>{
+        view.sideNav();
+    });
+
+    view.bankFeeClick(()=>{
+        view.setBankStorage();
+    });
 };
 
 
