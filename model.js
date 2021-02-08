@@ -16,12 +16,12 @@ class Model {
         this.display = "";
     }
 
-    convert(value, away, home, fee){
+    convert(value, visit, home, fee){
         let result;
-        if (away === home){
+        if (visit === home){
             result = (value * fee);
         } else {
-            result = Math.round(((value / away) * home) * fee);
+            result = Math.round(((value / visit) * home) * fee);
         }
         this.display = result;
     }
@@ -64,15 +64,15 @@ class Model {
         request.send();
     }
 
-    getAwayRates(away){
+    getVisitRates(visit){
         let i;
-        let awayRate;
+        let visitRate;
         for (i = 0; i < currency.length; i++) {
-            if (currency[i] === away){
-                awayRate = rates[i];
+            if (currency[i] === visit){
+                visitRate = rates[i];
             }
         }
-        return awayRate;
+        return visitRate;
     }
 
     getHomeRates(home){
@@ -86,9 +86,13 @@ class Model {
         return homeRate;
     }
 
-    getStorage(){
+    getRatesStorage(){
         currency = JSON.parse(localStorage.getItem("Currency"));
         rates = JSON.parse(localStorage.getItem("Rates"));
+        if ((currency === []) && (rates === [])){
+            console.log("Local Storage is empty... Getting Live Rates");
+            this.getLiveRates();
+        }
     }
 
     getLiveDate(){
@@ -107,9 +111,55 @@ class Model {
         return year + "-" + month + "-" + date;
     }
 
-    getStorageDate(){
+    getDateStorage(){
         let date;
         date = localStorage.getItem("Date");
         return date;
+    }
+
+    setBankStorage(fee){
+        localStorage.setItem("fee", fee);
+    }
+
+    getBankStorage(){
+        if (localStorage.getItem("fee") === null){
+            return 0;
+        } else {
+            return localStorage.getItem("fee");
+        }
+    }
+
+    setCurrencyStorage(visit,home){
+        let i;
+        let j;
+        for(i = 0; i < visit.length; i++){
+            if(visit[i].checked === true){
+                localStorage.setItem("visitCurrency", visit[i].value);
+                break;
+            }
+        }
+        for(j = 0; j < home.length; j++){
+            if(home[j].checked === true){
+                localStorage.setItem("homeCurrency", home[j].value);
+                break;
+            }
+        }
+    }
+
+    getCurrencyStorage(visit,home){
+        let i;
+        let j;
+        for (i = 0; i < visit.length; i++){
+            if (visit[i].value === localStorage.getItem("visitCurrency")){
+                visit[i].checked = true;
+                break;
+            }
+        }
+        for (j = 0; j < home.length; j++){
+            if (home[j].value === localStorage.getItem("homeCurrency")){
+                home[j].checked = true;
+                break;
+            }
+        }
     }
 }

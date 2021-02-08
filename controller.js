@@ -10,30 +10,29 @@ const initialise = () => {
 
     if(navigator.onLine === true){
         console.log("ONLINE");
-        if (model.getLiveDate() > model.getStorageDate()){
+        if (model.getLiveDate() === model.getDateStorage()){
+            console.log("Rates have already been updated... Getting Rates from storage");
+            model.getRatesStorage();
+        } else {
             console.log("Getting Live Rates");
             model.getLiveRates();
-        } else {
-            console.log("Rates have already been updated... Getting rates from storage");
-            model.getStorage();
         }
     } else {
         console.log("OFFLINE");
-        model.getStorage();
+        model.getRatesStorage();
     }
+    model.getCurrencyStorage(view.getVisitList(), view.getHomeList());
+    view.insertBankFee(model.getBankStorage());
 
-    view.getStorage();
-    view.getBankStorage();
-
-    view.buttonClick((event)=>{
+    view.calculatorClick((event)=>{
         if (event.target.id === "clear"){
             model.clear();
         } else if (event.target.id === "equals"){
-            let away = model.getAwayRates(view.getAwayCurrency());
+            let visit = model.getVisitRates(view.getVisitCurrency());
             let home = model.getHomeRates(view.getHomeCurrency());
             let value = model.display;
             let fee = model.bankFee(view.getBankFee());
-            model.convert(value, away, home, fee);
+            model.convert(value, visit, home, fee);
         }
         else {
             model.appendNumber(event.target.id);
@@ -42,17 +41,13 @@ const initialise = () => {
     });
 
     view.radioClick(()=>{
-        view.getAwayCurrency();
+        view.getVisitCurrency();
         view.getHomeCurrency();
-        view.setStorage();
-    });
-
-    view.sideNavClick(()=>{
-        view.sideNav();
+        model.setCurrencyStorage(view.getVisitList(), view.getHomeList());
     });
 
     view.bankFeeClick(()=>{
-        view.setBankStorage();
+        model.setBankStorage(view.getBankFee());
     });
 };
 

@@ -2,9 +2,12 @@
 
 class View{
     constructor() {
+        document.getElementById("openCloseButton").addEventListener("click", this.sideNav);
+        document.getElementById("about").addEventListener("click", this.about);
+        document.getElementsByClassName("close")[0].addEventListener("click", this.closeAbout);
     }
 
-    buttonClick(listener){
+    calculatorClick(listener){
         document.getElementById("9").addEventListener("click", listener);
         document.getElementById("8").addEventListener("click", listener);
         document.getElementById("7").addEventListener("click", listener);
@@ -20,86 +23,41 @@ class View{
     }
 
     radioClick(listener){
-        let away = document.getElementsByName("awayCurrency");
+        let visit = document.getElementsByName("visitCurrency");
         let home = document.getElementsByName("homeCurrency");
-        for (let i = 0 ; i < away.length; i++) {
-            away[i].addEventListener('click' , listener ) ;
+        for (let i = 0 ; i < visit.length; i++) {
+            visit[i].addEventListener('click' , listener ) ;
         }
         for (let j = 0 ; j < home.length; j++) {
             home[j].addEventListener('click' , listener ) ;
         }
     }
-
-    sideNavClick(listener){
-        document.getElementById("openCloseBtn").addEventListener("click", listener);
-    }
-
     bankFeeClick(listener){
         document.getElementById("fee").addEventListener("click", listener);
     }
-
-    display(away){
-        document.getElementById("display").value = away;
+    display(value){
+        document.getElementById("display").value = value;
+    }
+    getVisitList(){
+        return document.getElementsByName("visitCurrency");
     }
 
-    setStorage(){
-        let i;
-        let j;
-        let away = document.getElementsByName("awayCurrency");
-        let home = document.getElementsByName("homeCurrency");
-        for(i = 0; i < away.length; i++){
-            if(away[i].checked === true){
-                localStorage.setItem("awayCurrency", away[i].value);
-                break;
-            }
-        }
-        for(j = 0; j < home.length; j++){
-            if(home[j].checked === true){
-                localStorage.setItem("homeCurrency", home[j].value);
-                break;
-            }
-        }
+    getHomeList(){
+        return document.getElementsByName("homeCurrency");
     }
 
-    getStorage(){
-        let i;
-        let j;
-        let away = document.getElementsByName("awayCurrency");
-        let home = document.getElementsByName("homeCurrency");
-        for (i = 0; i < away.length; i++){
-            if (away[i].value === localStorage.getItem("awayCurrency")){
-                away[i].checked = true;
-                break;
-            }
-        }
-        for (j = 0; j < away.length; j++){
-            if (home[j].value === localStorage.getItem("homeCurrency")){
-                home[j].checked = true;
-                break;
-            }
-        }
-    }
-
-    getBankFee() {
+    getBankFee(){
         return document.getElementById("fee").value;
     }
 
-    setBankStorage(){
-        localStorage.setItem("fee", document.getElementById("fee").value);
+    insertBankFee(fee){
+        document.getElementById("fee").value = fee;
     }
 
-    getBankStorage(){
-        if (localStorage.getItem("fee") === null){
-            document.getElementById("fee").value = "0";
-        } else {
-            document.getElementById("fee").value = localStorage.getItem("fee");
-        }
-    }
-
-    getAwayCurrency(){
+    getVisitCurrency(){
         let value;
         let i = 0;
-        let buttons = document.getElementsByName("awayCurrency");
+        let buttons = document.getElementsByName("visitCurrency");
         for(i; i < buttons.length; i++){
             if(buttons[i].checked === true){
                 value = buttons[i].value;
@@ -123,7 +81,17 @@ class View{
     }
 
     sideNav(){
-        document.getElementById("sideNav").classList.toggle('active');
-        document.getElementById("openCloseBtn").classList.toggle("change");
+        document.getElementById("sideNav").classList.toggle("active");
+        document.getElementById("openCloseButton").classList.toggle("active");
+        document.getElementById("openCloseButton").classList.toggle("change");
     }
+
+    about(){
+        document.getElementById("aboutBackground").style.display = "block";
+    }
+
+    closeAbout(){
+        document.getElementById("aboutBackground").style.display = "none";
+    }
+
 }

@@ -22,7 +22,15 @@ html, body{
     border: 0.1rem solid white;
 }
 
-#display {
+#clear{
+    background-color: #93456f;
+}
+
+#equals{
+    background-color: #459369;
+}
+
+#display{
     background-color: #cddbe7;
     color: black;
     text-align: right;
@@ -36,27 +44,29 @@ html, body{
     box-sizing: border-box;
 }
 
-#sideNav {
+#sideNav{
     position:absolute;
     top:0;
     left:-12rem;
     width:12rem;
-    height:100%;
+    height:100vh;
     background-color: #b2c8da;
     transition: 300ms;
+    overflow-y: auto;
 }
-#sideNav.active {
+#sideNav.active{
     left:0;
 }
-#sideNav .openCloseBtn {
+#openCloseButton{
     position:absolute;
-    left:12.5rem;
+    left:1rem;
     top:1rem;
+    transition: 300ms;
 }
 
-#sideNav .currency-visit, .currency-home, .bankFee{
-    padding: 1rem;
-    font-size: 1.25rem;
+#openCloseButton.active{
+    left: 12.5rem;
+    transition: 300ms;
 }
 
 .currencyVisitScroll, .currencyHomeScroll{
@@ -64,6 +74,52 @@ html, body{
     overflow: scroll;
     height: 11rem;
     width: 10rem;
+}
+
+#sideNav .currency-visit, .currency-home, .bankFee{
+    padding: 1rem;
+    font-size: 1.25rem;
+}
+
+#fee{
+    background-color: white;
+    height: 3rem;
+    width: 10rem;
+    border: none;
+    outline: none
+}
+
+#about{
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.25rem;
+    width: 10rem;
+    background-color: #7ea3c1;
+    border: none;
+}
+
+.aboutBackground{
+    display: none;
+    position: fixed;
+    top: 0;
+    padding-top: 20vh;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.6);
+}
+
+.aboutContent{
+    margin: auto;
+    padding: 1rem;
+    width: 80vw;
+    background-color: #cddbe7;
+}
+
+.close {
+    color: black;
+    float: right;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 .line1, .line2, .line3 {
