@@ -1,5 +1,7 @@
 'use strict';
-
+// https://developers.google.com/web/fundamentals/primers/service-workers#install_a_service_worker
+// https://developers.google.com/web/fundamentals/primers/service-workers#cache_and_return_requests
+// https://www.youtube.com/watch?v=dXuvT4oollQ&list=PLNYkxOF6rcIB2xHBZ7opgc2Mv009X87Hh&index=4
 const cacheName = "cacheV1";
 const files = [
     "/",
